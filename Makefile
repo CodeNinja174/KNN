@@ -1,7 +1,10 @@
-HLS = /tools/Xilinx/Vitis_HLS/2022.2
+HLS ?= /tools/Xilinx/Vitis_HLS/2022.2
 
 CXX = g++
-CFLAGS = -I$(HLS)/include -Isrc -std=c++14 -O2
+CFLAGS = -Iinclude -Isrc -std=c++14 -O2 -Wall -Wextra
+ifneq ("$(wildcard $(HLS)/include)","")
+  CFLAGS += -I$(HLS)/include
+endif
 
 SRC = $(wildcard src/*.cpp)
 TB  = $(wildcard tb/*.cpp)
@@ -13,6 +16,7 @@ TARGET = build/sim
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
+	@mkdir -p build
 	$(CXX) $(OBJ) $(CFLAGS) -o $(TARGET)
 
 %.o: %.cpp
