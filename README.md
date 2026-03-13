@@ -7,6 +7,7 @@ This repository contains a **publishable research scaffold** for a parameterized
 - `include/knn.hpp`: public accelerator configuration + API
 - `src/`: software reference model and testable baseline implementation
 - `hls/`: synthesizable HLS kernel (`knn_hls_top`) with AXIS + AXI-Lite interfaces and optimization pragmas
+- `src/`: reference module implementation (`knn_top`, voting, and stubs for module split)
 - `tb/tb_knn.cpp`: executable correctness testbench vs golden KNN
 - `scripts/generate_dataset.py`: synthetic dataset generator
 - `scripts/run_experiments.py`: reproducible ablation runner (CSV output)
@@ -33,12 +34,4 @@ Implemented features:
 - Hierarchical top-k emulation using PE chunking
 - Golden-model validation testbench
 
-This repository includes both a software model and a synthesizable HLS kernel path for low-latency accelerator development.
-
-## HLS synthesis flow
-
-```bash
-vitis_hls -f scripts/run_hls.tcl
-```
-
-HLS kernel optimization techniques used include DATAFLOW, PIPELINE (II=1), ARRAY_PARTITION, and BRAM binding in `hls/knn_hls_top.cpp`.
+This is a **research prototype** designed to support algorithm and architecture studies before RTL/HLS closure on hardware.

@@ -7,7 +7,6 @@
    - Streaming-style train/test API in `KNNAccelerator`.
    - L1/L2 distance, precision simulation, approximate mode, and early-exit.
    - Hierarchical top-k emulation with PE chunking.
-   - Synthesizable HLS kernel with AXI stream interfaces, AXI-Lite control, and low-latency pragmas in `hls/knn_hls_top.cpp`.
 
 2. **Validation and testing**
    - End-to-end C++ testbench (`tb/tb_knn.cpp`) comparing prediction to golden KNN.
@@ -16,7 +15,6 @@
 3. **Reproducible experiments**
    - Synthetic dataset generator script.
    - Ablation runner producing machine-readable CSV output under `results/`.
-   - `scripts/run_hls.tcl` synthesis script for Vitis HLS flow.
 
 4. **Publication support docs**
    - Methodology and reproducibility notes in `docs/publishable_methodology.md`.

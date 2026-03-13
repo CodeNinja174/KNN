@@ -12,7 +12,6 @@ This repository now contains an executable reference implementation and reproduc
   - PE-count-aware hierarchical top-k merge model
 - Testbench that validates software model prediction against golden KNN.
 - Dataset generation and ablation scripts that emit machine-readable CSV.
-- Synthesizable HLS kernel (`hls/knn_hls_top.cpp`) with AXIS I/O + AXI-Lite control register mapping and low-latency optimization pragmas.
 
 ## Reproducibility steps
 1. `python3 scripts/generate_dataset.py`
@@ -27,6 +26,3 @@ This repository now contains an executable reference implementation and reproduc
 4. Ablation study.
 5. Baseline comparisons (CPU/GPU/FPGA prior work).
 6. Threats to validity and limitations.
-
-## HLS build command
-- `vitis_hls -f scripts/run_hls.tcl`
