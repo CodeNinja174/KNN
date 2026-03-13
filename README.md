@@ -5,6 +5,8 @@ This repository contains a **publishable research scaffold** for a parameterized
 ## Repository layout
 
 - `include/knn.hpp`: public accelerator configuration + API
+- `src/`: software reference model and testable baseline implementation
+- `hls/`: synthesizable HLS kernel (`knn_hls_top`) with AXIS + AXI-Lite interfaces and optimization pragmas
 - `src/`: reference module implementation (`knn_top`, voting, and stubs for module split)
 - `tb/tb_knn.cpp`: executable correctness testbench vs golden KNN
 - `scripts/generate_dataset.py`: synthetic dataset generator
